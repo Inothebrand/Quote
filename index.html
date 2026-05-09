@@ -1,1 +1,1002 @@
+<!DOCTYPE html>
 
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Devis — Inès Ouajib · Community Management</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --white: #FFFFFF;
+    --ink: #111111;
+    --cherry: #8B0435;
+    --cherry-light: rgba(139,4,53,0.07);
+    --cherry-mid: rgba(139,4,53,0.13);
+    --border: #E5E0DA;
+    --border-dark: #C8C0B8;
+    --muted: #7A746E;
+    --muted-light: #A8A29C;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘Mulish’, sans-serif;
+background: var(–bg);
+color: var(–ink);
+font-size: 9.5pt;
+line-height: 1.55;
+}
+
+/* ── HEADER ── */
+header {
+background: var(–white);
+border-bottom: 1px solid var(–border);
+}
+
+.header-top {
+background: var(–cherry);
+height: 5px;
+width: 100%;
+}
+
+.header-inner {
+padding: 22px 36px 18px;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+}
+
+.logo-area {
+flex-shrink: 0;
+width: 64px;
+height: 64px;
+}
+
+.logo-svg { width: 64px; height: 64px; }
+
+.header-text { flex: 1; }
+
+.header-eyebrow {
+font-size: 6.5pt;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+margin-bottom: 4px;
+font-family: ‘League Spartan’, sans-serif;
+}
+
+.header-title {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 24pt;
+font-weight: 700;
+line-height: 1.05;
+color: var(–ink);
+letter-spacing: -0.02em;
+margin-bottom: 2px;
+}
+
+.header-title em {
+font-style: normal;
+color: var(–cherry);
+}
+
+.header-sub {
+font-size: 7.5pt;
+color: var(–muted);
+font-weight: 300;
+margin-top: 4px;
+}
+
+/* ── INFO BAR ── */
+.info-bar {
+background: var(–ink);
+padding: 10px 36px;
+display: flex;
+gap: 0;
+}
+
+.info-cell {
+flex: 1;
+padding-right: 24px;
+}
+
+.info-label {
+font-size: 6pt;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+margin-bottom: 1px;
+}
+
+.info-value {
+font-size: 8pt;
+color: rgba(255,255,255,0.8);
+font-weight: 300;
+}
+
+/* ── MAIN ── */
+.main-wrap {
+padding: 28px 36px 36px;
+}
+
+/* ── META BLOCK ── */
+.meta-block {
+display: flex;
+gap: 20px;
+margin-bottom: 24px;
+}
+
+.meta-card {
+flex: 1;
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 10px;
+padding: 14px 16px;
+position: relative;
+overflow: hidden;
+}
+
+.meta-card::before {
+content: ‘’;
+position: absolute;
+left: 0; top: 0; bottom: 0;
+width: 3px;
+background: var(–cherry);
+}
+
+.meta-card-title {
+font-size: 6pt;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+margin-bottom: 8px;
+}
+
+.meta-row {
+display: flex;
+justify-content: space-between;
+font-size: 8pt;
+padding: 2px 0;
+border-bottom: 1px solid var(–border);
+}
+.meta-row:last-child { border-bottom: none; }
+
+.meta-key { color: var(–muted); font-weight: 400; }
+.meta-val { color: var(–ink); font-weight: 500; }
+
+/* ── SECTION HEADER ── */
+.section-head {
+display: flex;
+align-items: flex-end;
+gap: 14px;
+padding-bottom: 10px;
+margin-bottom: 14px;
+margin-top: 26px;
+border-bottom: 1px solid var(–border);
+page-break-after: avoid;
+}
+
+.sec-num {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 36pt;
+line-height: 1;
+color: var(–cherry-mid);
+font-weight: 700;
+letter-spacing: -0.02em;
+flex-shrink: 0;
+}
+
+.sec-meta { flex: 1; }
+
+.sec-tag {
+font-size: 6pt;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+margin-bottom: 2px;
+}
+
+.sec-title {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 14pt;
+font-weight: 600;
+color: var(–ink);
+line-height: 1.15;
+letter-spacing: -0.01em;
+}
+
+/* ── FORMULE CARD ── */
+.formule-card {
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 18px;
+page-break-inside: avoid;
+}
+
+.formule-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 11px 16px;
+background: var(–cherry);
+color: white;
+}
+
+.formule-name {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 11pt;
+font-weight: 700;
+letter-spacing: -0.01em;
+}
+
+.formule-price {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 14pt;
+font-weight: 700;
+letter-spacing: -0.01em;
+}
+
+.formule-price small {
+font-size: 7pt;
+font-weight: 400;
+opacity: 0.85;
+}
+
+/* TABLE */
+table {
+width: 100%;
+border-collapse: collapse;
+font-size: 8pt;
+}
+
+thead th {
+background: var(–cherry-light);
+padding: 7px 10px;
+text-align: left;
+font-size: 6pt;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+border-bottom: 1px solid var(–border);
+}
+
+tbody tr {
+border-bottom: 1px solid var(–border);
+}
+
+tbody tr:last-child {
+border-bottom: none;
+background: var(–cherry-light);
+}
+
+tbody tr:last-child td {
+font-weight: 600;
+color: var(–cherry);
+font-family: ‘League Spartan’, sans-serif;
+font-size: 8.5pt;
+}
+
+tbody td {
+padding: 7px 10px;
+vertical-align: top;
+color: var(–ink);
+font-weight: 300;
+}
+
+tbody td:first-child {
+font-weight: 500;
+color: var(–ink);
+white-space: nowrap;
+min-width: 120px;
+}
+
+.td-temps {
+text-align: right;
+white-space: nowrap;
+color: var(–muted);
+}
+
+.formule-note {
+padding: 9px 16px;
+background: var(–bg);
+font-size: 7.5pt;
+color: var(–muted);
+font-style: italic;
+border-top: 1px solid var(–border);
+}
+
+/* ── NOTE BOX ── */
+.note {
+background: var(–cherry-light);
+border-left: 3px solid var(–cherry);
+border-radius: 0 8px 8px 0;
+padding: 10px 14px;
+margin-bottom: 14px;
+font-size: 8pt;
+color: var(–ink);
+line-height: 1.6;
+}
+
+.note strong { color: var(–cherry); font-weight: 600; }
+
+/* ── ANALYSE SECTION ── */
+.analyse-grid {
+display: flex;
+gap: 14px;
+margin-bottom: 14px;
+}
+
+.analyse-col {
+flex: 1;
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 10px;
+overflow: hidden;
+}
+
+.analyse-col-head {
+background: var(–cherry-light);
+padding: 8px 12px;
+font-family: ‘League Spartan’, sans-serif;
+font-size: 7pt;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+border-bottom: 1px solid var(–border);
+}
+
+.analyse-list {
+padding: 8px 12px;
+list-style: none;
+}
+
+.analyse-list li {
+font-size: 7.5pt;
+padding: 3px 0 3px 10px;
+border-bottom: 1px solid var(–border);
+color: var(–ink);
+font-weight: 300;
+position: relative;
+}
+
+.analyse-list li:last-child { border-bottom: none; }
+
+.analyse-list li::before {
+content: ‘—’;
+color: var(–cherry);
+position: absolute;
+left: 0;
+font-weight: 600;
+}
+
+.livrable-box {
+background: var(–ink);
+border-radius: 10px;
+padding: 12px 16px;
+color: white;
+display: flex;
+gap: 14px;
+align-items: flex-start;
+margin-bottom: 18px;
+}
+
+.livrable-icon {
+font-size: 18pt;
+flex-shrink: 0;
+line-height: 1;
+margin-top: 2px;
+}
+
+.livrable-title {
+font-family: ‘League Spartan’, sans-serif;
+font-size: 8.5pt;
+font-weight: 700;
+color: var(–cherry);
+letter-spacing: 0.08em;
+text-transform: uppercase;
+margin-bottom: 3px;
+}
+
+.livrable-text {
+font-size: 8pt;
+color: rgba(255,255,255,0.78);
+font-weight: 300;
+line-height: 1.6;
+}
+
+/* ── OPTIONS TABLE ── */
+.options-card {
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 18px;
+page-break-inside: avoid;
+}
+
+.options-card thead th:last-child { text-align: right; }
+.options-card tbody td:last-child {
+text-align: right;
+font-weight: 500;
+color: var(–cherry);
+white-space: nowrap;
+}
+
+/* ── CONDITIONS ── */
+.conditions-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.cond-item {
+flex: 1;
+min-width: 140px;
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 10px 12px;
+position: relative;
+overflow: hidden;
+}
+
+.cond-item::before {
+content: ‘’;
+position: absolute;
+left: 0; top: 0; bottom: 0;
+width: 3px;
+background: var(–cherry);
+}
+
+.cond-label {
+font-size: 6pt;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+margin-bottom: 3px;
+}
+
+.cond-text {
+font-size: 8pt;
+color: var(–ink);
+font-weight: 300;
+line-height: 1.5;
+}
+
+/* ── SIGNATURE BLOCK ── */
+.signature-block {
+background: var(–white);
+border: 1px solid var(–border);
+border-radius: 10px;
+overflow: hidden;
+page-break-inside: avoid;
+}
+
+.sig-header {
+background: var(–cherry);
+padding: 10px 16px;
+color: white;
+font-family: ‘League Spartan’, sans-serif;
+font-size: 7.5pt;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+font-weight: 700;
+}
+
+.sig-body {
+padding: 16px;
+display: flex;
+gap: 20px;
+}
+
+.sig-col { flex: 1; }
+
+.sig-label {
+font-size: 6.5pt;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–cherry);
+font-weight: 700;
+font-family: ‘League Spartan’, sans-serif;
+margin-bottom: 6px;
+}
+
+.sig-line {
+height: 1px;
+background: var(–border-dark);
+margin-bottom: 4px;
+}
+
+.sig-box {
+border: 1px dashed var(–border-dark);
+border-radius: 6px;
+height: 52px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–muted-light);
+font-size: 7pt;
+font-style: italic;
+margin-top: 8px;
+}
+
+.sig-mention {
+font-size: 7pt;
+color: var(–muted);
+font-style: italic;
+margin-top: 8px;
+line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+.doc-footer {
+margin-top: 20px;
+padding-top: 12px;
+border-top: 1px solid var(–border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-left {
+font-size: 7pt;
+color: var(–muted);
+font-weight: 300;
+}
+
+.footer-right {
+font-size: 7pt;
+color: var(–cherry);
+font-weight: 600;
+font-family: ‘League Spartan’, sans-serif;
+letter-spacing: 0.06em;
+text-align: right;
+}
+
+/* ── PAGE BREAKS ── */
+.page-break { page-break-before: always; }
+
+@media print {
+body { background: white; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-top"></div>
+  <div class="header-inner">
+    <div class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="95" font-family="Georgia, serif" font-size="110" font-weight="bold" fill="#8B0435" letter-spacing="-8">io</text>
+      </svg>
+    </div>
+    <div class="header-text">
+      <div class="header-eyebrow">Inès Ouajib · Community Management</div>
+      <div class="header-title">DEVIS <em>#2026-001</em></div>
+      <div class="header-sub">Gestion des Réseaux Sociaux &amp; Analyse de Performance</div>
+    </div>
+  </div>
+</header>
+
+<!-- INFO BAR -->
+
+<div class="info-bar">
+  <div class="info-cell">
+    <div class="info-label">Établi pour</div>
+    <div class="info-value">[Nom du client]</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Date</div>
+    <div class="info-value">[Date d'émission]</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Validité</div>
+    <div class="info-value">30 jours</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Statut</div>
+    <div class="info-value">En attente de signature</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+
+<div class="main-wrap">
+
+  <!-- META BLOCK -->
+
+  <div class="meta-block">
+    <div class="meta-card">
+      <div class="meta-card-title">Prestataire</div>
+      <div class="meta-row"><span class="meta-key">Nom</span><span class="meta-val">[Ton nom / Activité]</span></div>
+      <div class="meta-row"><span class="meta-key">Email</span><span class="meta-val">[Ton email]</span></div>
+      <div class="meta-row"><span class="meta-key">Téléphone</span><span class="meta-val">[Ton téléphone]</span></div>
+      <div class="meta-row"><span class="meta-key">Localisation</span><span class="meta-val">[Ta ville], Ain</span></div>
+      <div class="meta-row"><span class="meta-key">Statut</span><span class="meta-val">Freelance — TVA non applicable (art. 293 B CGI)</span></div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card-title">Client</div>
+      <div class="meta-row"><span class="meta-key">Nom</span><span class="meta-val">[Nom]</span></div>
+      <div class="meta-row"><span class="meta-key">Adresse</span><span class="meta-val">[Adresse]</span></div>
+      <div class="meta-row"><span class="meta-key">Devis n°</span><span class="meta-val">2026-001</span></div>
+      <div class="meta-row"><span class="meta-key">Date</span><span class="meta-val">[Date]</span></div>
+      <div class="meta-row"><span class="meta-key">Validité</span><span class="meta-val">30 jours à compter de l'émission</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 : FORMULES -->
+
+  <div class="section-head">
+    <div class="sec-num">01</div>
+    <div class="sec-meta">
+      <div class="sec-tag">Prestations</div>
+      <div class="sec-title">Gestion Instagram &amp; TikTok — Formules mensuelles</div>
+    </div>
+  </div>
+
+  <!-- FORMULE ESSENTIEL -->
+
+  <div class="formule-card">
+    <div class="formule-header">
+      <div class="formule-name">Formule Essentiel</div>
+      <div class="formule-price">400 € <small>/ mois HT</small></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Prestation</th>
+          <th>Détail</th>
+          <th style="width:14%; text-align:right;">Temps estimé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Publications Instagram</td>
+          <td>4 posts/mois + 4 stories/mois (visuels + légendes + hashtags)</td>
+          <td class="td-temps">3h30/mois</td>
+        </tr>
+        <tr>
+          <td>Publications TikTok</td>
+          <td>4 vidéos/mois (montage court, sous-titres)</td>
+          <td class="td-temps">4h/mois</td>
+        </tr>
+        <tr>
+          <td>Planification</td>
+          <td>Programmation aux meilleures heures</td>
+          <td class="td-temps">30min/mois</td>
+        </tr>
+        <tr>
+          <td>Identité visuelle</td>
+          <td>Respect de votre charte graphique</td>
+          <td class="td-temps">Inclus</td>
+        </tr>
+        <tr>
+          <td>Analyse mensuelle légère</td>
+          <td>Stats Instagram + TikTok (portée, engagement, abonnés)</td>
+          <td class="td-temps">1h/mois</td>
+        </tr>
+        <tr>
+          <td>Total estimé</td>
+          <td></td>
+          <td class="td-temps">~9h/mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="formule-note">Idéal pour maintenir une présence régulière et cohérente sur les deux plateformes.</div>
+  </div>
+
+  <!-- FORMULE CROISSANCE -->
+
+  <div class="formule-card">
+    <div class="formule-header">
+      <div class="formule-name">Formule Croissance</div>
+      <div class="formule-price">650 € <small>/ mois HT</small></div>
+    </div>
+    <div style="padding:7px 14px 0; font-size:7.5pt; color:var(--muted); font-style:italic; background:var(--white);">Tout ce qui est inclus dans Essentiel, plus :</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Prestation</th>
+          <th>Détail</th>
+          <th style="width:14%; text-align:right;">Temps estimé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Publications Instagram</td>
+          <td>8 posts/mois + 8 stories/mois (visuels + légendes + hashtags)</td>
+          <td class="td-temps">7h/mois</td>
+        </tr>
+        <tr>
+          <td>Publications TikTok</td>
+          <td>8 vidéos/mois (montage court, sous-titres)</td>
+          <td class="td-temps">8h/mois</td>
+        </tr>
+        <tr>
+          <td>Stories Instagram</td>
+          <td>2 à 3 stories/semaine</td>
+          <td class="td-temps">3h/mois</td>
+        </tr>
+        <tr>
+          <td>Reels &amp; TikTok natifs</td>
+          <td>2 contenus vidéos créatifs/mois</td>
+          <td class="td-temps">3h/mois</td>
+        </tr>
+        <tr>
+          <td>Engagement</td>
+          <td>Réponse aux commentaires et messages (jours ouvrés)</td>
+          <td class="td-temps">2h/mois</td>
+        </tr>
+        <tr>
+          <td>Analyse mensuelle intermédiaire</td>
+          <td>Stats Insta &amp; TikTok + suivi trafic site (Google Analytics) + rapport PDF</td>
+          <td class="td-temps">2h/mois</td>
+        </tr>
+        <tr>
+          <td>Total estimé</td>
+          <td></td>
+          <td class="td-temps">~25h/mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="formule-note">Idéal pour développer votre communauté et gagner en visibilité locale.</div>
+  </div>
+
+  <!-- FORMULE PREMIUM -->
+
+  <div class="formule-card">
+    <div class="formule-header">
+      <div class="formule-name">Formule Premium</div>
+      <div class="formule-price">900 € <small>/ mois HT</small></div>
+    </div>
+    <div style="padding:7px 14px 0; font-size:7.5pt; color:var(--muted); font-style:italic; background:var(--white);">Tout ce qui est inclus dans Croissance, plus :</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28%">Prestation</th>
+          <th>Détail</th>
+          <th style="width:14%; text-align:right;">Temps estimé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Publications Instagram</td>
+          <td>12 posts/mois + 12 stories/mois (visuels + légendes + hashtags)</td>
+          <td class="td-temps">10h30/mois</td>
+        </tr>
+        <tr>
+          <td>Publications TikTok</td>
+          <td>10 vidéos/mois (montage court, sous-titres)</td>
+          <td class="td-temps">10h/mois</td>
+        </tr>
+        <tr>
+          <td>Stratégie éditoriale</td>
+          <td>Calendrier éditorial personnalisé chaque mois</td>
+          <td class="td-temps">2h/mois</td>
+        </tr>
+        <tr>
+          <td>Gestion DM</td>
+          <td>Réponse aux messages privés (jours ouvrés)</td>
+          <td class="td-temps">2h/mois</td>
+        </tr>
+        <tr>
+          <td>Veille concurrentielle</td>
+          <td>Analyse de la concurrence locale 1x/mois</td>
+          <td class="td-temps">1h30/mois</td>
+        </tr>
+        <tr>
+          <td>Analyse mensuelle avancée</td>
+          <td>Stats Insta &amp; TikTok + Google Analytics + Search Console + recommandations stratégiques écrites</td>
+          <td class="td-temps">3h/mois</td>
+        </tr>
+        <tr>
+          <td>Total estimé</td>
+          <td></td>
+          <td class="td-temps">~29h/mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="formule-note">Idéal pour faire des réseaux sociaux un vrai levier de croissance pour votre salon.</div>
+  </div>
+
+  <!-- PAGE BREAK -->
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 2 : ANALYSE -->
+
+  <div class="section-head">
+    <div class="sec-num">02</div>
+    <div class="sec-meta">
+      <div class="sec-tag">Méthodologie</div>
+      <div class="sec-title">Détail de l'analyse de données (incluse selon formule)</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Objectif :</strong> Mesurer concrètement l'impact de chaque action mise en place sur vos réseaux et votre site. Chaque décision est guidée par la donnée, pas par l'intuition.
+  </div>
+
+  <div class="analyse-grid">
+    <div class="analyse-col">
+      <div class="analyse-col-head">Réseaux sociaux — Instagram &amp; TikTok natifs</div>
+      <ul class="analyse-list">
+        <li>Portée et impressions des publications</li>
+        <li>Taux d'engagement (likes, commentaires, partages, sauvegardes)</li>
+        <li>Évolution du nombre d'abonnés</li>
+        <li>Performance des Reels et vidéos TikTok (vues, taux de complétion)</li>
+        <li>Meilleurs créneaux de publication</li>
+      </ul>
+    </div>
+    <div class="analyse-col">
+      <div class="analyse-col-head">Site web — Google Analytics &amp; Search Console</div>
+      <ul class="analyse-list">
+        <li>Nombre de visites et pages vues</li>
+        <li>Trafic provenant des réseaux sociaux</li>
+        <li>Pages les plus consultées</li>
+        <li>Comportement des visiteurs (durée, rebond)</li>
+        <li>Mots-clés qui génèrent des visites</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="livrable-box">
+    <div class="livrable-icon">📄</div>
+    <div>
+      <div class="livrable-title">Livrable mensuel</div>
+      <div class="livrable-text">Un rapport clair et visuel envoyé chaque fin de mois, avec les chiffres clés, ce qui a bien fonctionné, ce qui est à ajuster, et les recommandations pour le mois suivant.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 : OPTIONS -->
+
+  <div class="section-head">
+    <div class="sec-num">03</div>
+    <div class="sec-meta">
+      <div class="sec-tag">Compléments</div>
+      <div class="sec-title">Options à la carte (hors formule)</div>
+    </div>
+  </div>
+
+  <div class="options-card">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Option</th>
+          <th>Détail</th>
+          <th style="width:28%; text-align:right;">Tarif</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Shooting photo</td>
+          <td>Déplacement au salon — demi-journée (4h), visuels retouchés prêts à publier</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">10 photos : 90 € / 20 photos : 150 €</td>
+        </tr>
+        <tr>
+          <td>Shooting vidéo &amp; photo</td>
+          <td>Demi-journée (4h), mix photos + vidéos montées (Reels/TikTok)</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">10 ph. + 3 vid. : 150 € / 20 ph. + 5 vid. : 220 €</td>
+        </tr>
+        <tr>
+          <td>Campagne publicitaire</td>
+          <td>Mise en place et suivi d'une pub Meta/TikTok (budget pub en sus)</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">150 €/campagne</td>
+        </tr>
+        <tr>
+          <td>Création de compte</td>
+          <td>Ouverture et paramétrage complet d'un compte Insta ou TikTok</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">80 €</td>
+        </tr>
+        <tr>
+          <td>Refonte graphique</td>
+          <td>Nouveau fil Instagram cohérent + templates Canva livrés</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">250 €</td>
+        </tr>
+        <tr>
+          <td>Jeu-concours</td>
+          <td>Conception, animation et bilan d'un concours</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">120 €</td>
+        </tr>
+        <tr>
+          <td>Story à la demande</td>
+          <td>Story urgente hors planning (ex : promo flash, annonce)</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">25 €/story</td>
+        </tr>
+        <tr>
+          <td>Rapport trimestriel</td>
+          <td>Analyse sur 3 mois avec bilan complet et plan d'action</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">150 €</td>
+        </tr>
+        <tr>
+          <td>Modération week-end</td>
+          <td>Réponse aux commentaires et DM samedi et dimanche</td>
+          <td class="td-temps" style="color:var(--cherry); font-weight:500;">80 €/mois</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4 : CONDITIONS -->
+
+  <div class="section-head">
+    <div class="sec-num">04</div>
+    <div class="sec-meta">
+      <div class="sec-tag">Cadre contractuel</div>
+      <div class="sec-title">Conditions générales</div>
+    </div>
+  </div>
+
+  <div class="conditions-grid">
+    <div class="cond-item">
+      <div class="cond-label">Paiement</div>
+      <div class="cond-text">Mensuel, en début de mois par virement bancaire.</div>
+    </div>
+    <div class="cond-item">
+      <div class="cond-label">Engagement</div>
+      <div class="cond-text">Minimum 3 mois recommandé pour des résultats visibles.</div>
+    </div>
+    <div class="cond-item">
+      <div class="cond-label">Résiliation</div>
+      <div class="cond-text">Préavis de 30 jours par écrit.</div>
+    </div>
+    <div class="cond-item">
+      <div class="cond-label">Démarrage</div>
+      <div class="cond-text">Sous 15 jours après signature du présent devis.</div>
+    </div>
+    <div class="cond-item">
+      <div class="cond-label">Statut fiscal</div>
+      <div class="cond-text">Freelance — TVA non applicable selon l'article 293 B du CGI.</div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+
+  <div class="signature-block">
+    <div class="sig-header">Bon pour accord — Signature du client</div>
+    <div class="sig-body">
+      <div class="sig-col">
+        <div class="sig-label">À [Ta ville], le</div>
+        <div class="sig-line"></div>
+        <div class="sig-line" style="margin-top:18px;"></div>
+        <div style="font-size:7pt; color:var(--muted-light); margin-top:3px;">Date</div>
+        <div class="sig-mention">Devis non contractuel — valable 30 jours à compter de la date d'émission.<br>Pour acceptation, merci de retourner ce document signé avec la mention <em>"Bon pour accord"</em>.</div>
+      </div>
+      <div class="sig-col">
+        <div class="sig-label">Signature &amp; mention manuscrite</div>
+        <div class="sig-box">"Bon pour accord"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="doc-footer">
+    <div class="footer-left">Inès Ouajib · Community Management<br>[Ton email] · [Ton téléphone]</div>
+    <div class="footer-right">DEVIS 2026-001<br><span style="font-weight:300; color:var(--muted); font-family:'Mulish',sans-serif; font-size:6.5pt;">Document confidentiel</span></div>
+  </div>
+
+</div>
+</body>
+</html>
